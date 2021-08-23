@@ -15,7 +15,10 @@ import com.digitalinnovation.personaapi.exception.PersonNotFoundException;
 import com.digitalinnovation.personaapi.mapper.PersonMapper;
 import com.digitalinnovation.personaapi.repository.PersonRepository;
 
+import lombok.AllArgsConstructor;
+
 @Service
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class PersonService {
 
 	// Dependencias
@@ -23,10 +26,6 @@ public class PersonService {
 	
 	private final PersonMapper personMapper = PersonMapper.INSTANCE;
 	
-	@Autowired
-	public PersonService(PersonRepository personRepository) {
-		this.personRepository = personRepository;
-	}
 	
 	//Métodos
 	public MessageResponseDTO createPerson(PersonDTO personDTO) {
