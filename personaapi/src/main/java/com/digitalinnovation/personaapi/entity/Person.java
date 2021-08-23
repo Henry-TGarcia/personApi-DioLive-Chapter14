@@ -15,12 +15,16 @@ import javax.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 @Entity
 public class Person {
 
@@ -37,7 +41,7 @@ public class Person {
 	
 	@Column(nullable = false, unique = true)
 	private String cpf;
-	private LocalDate bithDate;
+	private LocalDate birthDate;
 	
 	//Associação
 	@OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, 
